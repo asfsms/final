@@ -1,0 +1,28 @@
+User:
+  name: string
+  linkedin: text
+  career_goal: text
+  career_status: text
+  advice_seeker: boolean
+  mentor: boolean
+  anonymous: boolean
+  year_joined: string
+  num_followers: integer
+
+Question:
+  user_id: integer
+  q_text: text
+  q_date: string
+  num_likes: integer
+
+Answer:
+  q_id: integer
+  user_id: integer
+  a_text: text
+  a_date: string
+  num_likes: integer
+
+Follower:
+  follower_id: integer
+  followed_id: integer
+  start_date: string
