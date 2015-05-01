@@ -1,0 +1,23 @@
+<img src="/assets/<%= @user.image %>" width="200">
+<h3> <%= @user.name %></h3>
+<p> Current Status: <%= @user.career_status %></p>
+<p> Career Goal: <%= @user.career_goal %></p>
+
+<br>
+<h4><i><b>Questions raised by <%= @user.name %>:</b></i></h4>
+
+<% @questions.each do |question| %>
+	 <% if question.user_id == @user.id %>
+	 	<p><b> <%= @user.name %> asked in <%= question.q_date %>:</b> <%= question.q_text %> </p>
+
+	 	<% @answers.each do |answer| %>
+	 		<% if answer.q_id == question.id %>
+	 			<% answerer = User.find_by(id: answer.user_id) %>
+	 			<p><b> - <%= answerer.name %> answered:</b> <%= answer.a_text %> </p>
+	 		 <% end %>
+	 	<% end %>
+	 <% end %>
+<% end %>
+
+<br>
+<a href="/users"> <h4> <- Back </h4> 

@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.boolean "anonymous",     default: false
     t.string  "year_joined"
     t.integer "num_followers"
+    t.string  "image"
   end
 
 end

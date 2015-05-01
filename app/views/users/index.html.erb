@@ -1,0 +1,14 @@
+<h1>Whose advice is it anyway?</h1>
+
+<div class="row">
+ <% @users.each do |user| %>
+  <div class="col-sm-6">
+	<div class="thumbnail">
+	  <a href="/users/<%= user.id %>"> <img src="/assets/<%= user.image %>" width="200"></a> 
+	  <div class="caption">
+	   <center><h4><a href="/users/<%= user.id %>"> <%= user.name %></h4></a></center>
+	  </div>
+	</div>
+  </div>
+ <% end %>
+</div>
